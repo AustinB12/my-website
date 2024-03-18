@@ -1,19 +1,26 @@
 ---
 import Layout from '../layouts/BlogPost.astro'
+
+const getYearDiff = () => {
+	const diff = new Date().getTime() - new Date(2019, 4, 1).getTime()
+	const yearDiff = diff / (525600 * 60 * 1000)
+	return Math.ceil(yearDiff).toString()
+}
 ---
 
 <Layout
-	title="A Little About Me"
+	title="A little about me..."
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date()}
 	heroImage="/blog-placeholder-about.jpg"
 >
-	<p>I'm born and raised in <strong>Wilmington, North Carolina</strong>.</p>
-	<p>I've got a Bachelor's Degree in <strong>Computer Science</strong>.</p>
-	<p>I've been working as a Software Engineer for <strong>5 years</strong></p>
+	<p>I was born and raised in <strong>Wilmington, North Carolina</strong>.</p>
+	I've got a Bachelor's Degree in <strong>Computer Science</strong>,
+	<br />
+	and I'm working on a Master's Degree in <strong>Computer Science</strong> as well.
 	<p>
-		I'm currently working on a Master's Degree in <strong
-			>Computer Science</strong
-		> as well.
+		I've been working as a Software Engineer for <strong
+			>{getYearDiff()} years</strong
+		>
 	</p>
 </Layout>

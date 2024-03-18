@@ -13,7 +13,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 	<body>
 		<Header />
 		<main>
-			<h1>Hello!</h1>
+			<h1 id="main-message"></h1>
 			<div class="hero-image">
 				{(<img width={1020} height={510} src={'./welcome.png'} alt="" />)}
 			</div>
@@ -28,5 +28,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 			</div>
 		</main>
 		<Footer />
+		<script>
+			const getMessage = () => {
+				const messages = [
+					'Hello!',
+					'Hola!',
+					'Bonjour!',
+					'Cześć!',
+					'Hallo!',
+					'Привет!',
+					'Olá!'
+				]
+				return messages[Math.floor(Math.random() * messages.length)]
+			}
+			const msg_header = document.querySelector('#main-message')
+			if (msg_header) {
+				msg_header.textContent = 'Hello!'
+				msg_header.addEventListener('click', () => {
+					msg_header.textContent = getMessage()
+				})
+			}
+		</script>
+		<style>
+			#main-message {
+				user-select: none;
+			}
+			#main-message:hover {
+				cursor: pointer;
+			}
+		</style>
 	</body>
 </html>
