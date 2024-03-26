@@ -1,6 +1,6 @@
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #f0db4f;
+	--accent-dark: #1e1e1e;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -38,7 +38,7 @@
 	font-display: swap;
 }
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: 'Futura', 'Atkinson', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;

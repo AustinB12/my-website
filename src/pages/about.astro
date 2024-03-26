@@ -14,13 +14,23 @@ const getYearDiff = () => {
 	pubDate={new Date()}
 	heroImage="/blog-placeholder-about.jpg"
 >
-	<p>I was born and raised in <strong>Wilmington, North Carolina</strong>.</p>
-	I've got a Bachelor's Degree in <strong>Computer Science</strong>,
-	<br />
-	and I'm working on a Master's Degree in <strong>Computer Science</strong> as well.
 	<p>
-		I've been working as a Software Engineer for <strong
+		🏡 I was born and raised in <strong>Wilmington, North Carolina</strong>.
+	</p>
+	<p class="tar">
+		🧑‍🎓 I've got a Bachelor's Degree in <strong>Computer Science</strong>,
+		<br />
+		and I'm working on a Master's Degree in <strong>Computer Science</strong> as
+		well.
+	</p>
+	<p>
+		🧑‍💻 I've been working as a Software Engineer for the past <strong
 			>{getYearDiff()} years</strong
 		>
 	</p>
+	<style>
+		.tar {
+			text-align: right;
+		}
+	</style>
 </Layout>
