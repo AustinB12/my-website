@@ -21,23 +21,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 		</main>
 		<Footer />
 		<script>
-			const getMessage = () => {
+			const getMessage = (current_msg = 'Hello!') => {
 				const messages = [
 					'Hello!',
 					'Hola!',
 					'Bonjour!',
-					'Cześć!',
 					'Hallo!',
 					'Привет!',
 					'Olá!'
-				]
+				].filter((x) => x != current_msg)
 				return messages[Math.floor(Math.random() * messages.length)]
 			}
 			const msg_header = document.querySelector('#main-message')
 			if (msg_header) {
 				msg_header.textContent = 'Hello!'
 				msg_header.addEventListener('click', () => {
-					msg_header.textContent = getMessage()
+					msg_header.textContent = getMessage(
+						msg_header.textContent?.toString()
+					)
 				})
 			}
 		</script>

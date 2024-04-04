@@ -4,7 +4,35 @@ import HeaderLink from './HeaderLink.astro'
 
 <header>
 	<nav>
-		<a id="home-logo" href="/"><h1>AB</h1></a>
+		<a id="home-logo" href="/"
+			><svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="106"
+				height="93"
+				viewBox="0 0 106 93"
+				fill="none"
+			>
+				<path
+					d="M14 30V82C14 86.4183 17.5817 90 22 90H84C88.4183 90 92 86.4183 92 82V30"
+					stroke="currentColor"
+					stroke-width="6"></path>
+				<path
+					d="M3 38.5L48.2831 5.44333C51.0932 3.39199 54.9068 3.39199 57.7169 5.44333L103 38.5"
+					stroke="currentColor"
+					stroke-width="6"
+					stroke-linecap="round"></path>
+				<rect x="32" y="42" width="8" height="13" rx="1" fill="currentColor"
+				></rect>
+				<rect x="32" y="56" width="8" height="14" rx="1" fill="currentColor"
+				></rect>
+				<rect x="52" y="50" width="22" height="40" rx="1" fill="currentColor"
+				></rect>
+				<rect x="23" y="42" width="8" height="13" rx="1" fill="currentColor"
+				></rect>
+				<rect x="23" y="56" width="8" height="14" rx="1" fill="currentColor"
+				></rect>
+			</svg></a
+		>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -66,6 +94,15 @@ import HeaderLink from './HeaderLink.astro'
 		transform: scale(1.1);
 		text-shadow: 0px 0px 8px var(--accent);
 		transition: all 0.3s ease-out;
+	}
+	nav #home-logo svg {
+		height: 48px;
+		width: 48px;
+	}
+	nav #home-logo svg:hover {
+		transform: scale(1.1);
+		transition-duration: 0.3s;
+		transition-timing-function: ease-out;
 	}
 	nav a.active {
 		text-decoration: none;

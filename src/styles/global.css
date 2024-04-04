@@ -1,6 +1,6 @@
 :root {
 	--accent: #f0db4f;
-	--accent-dark: #1e1e1e;
+	--accent-dark: #ff6200;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -25,20 +25,13 @@
 }
 @font-face {
 	font-family: 'Futura';
-	src: url('/fonts/Futura-Book-font.ttf') format('ttf');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Futura';
-	src: url('/fonts/Futura-Bold-font.ttf') format('ttf');
-	font-weight: 700;
+	src: url('/fonts/futur.ttf') format('ttf');
+	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 body {
-	font-family: 'Futura', 'Atkinson', sans-serif;
+	font-family: Futura, sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
