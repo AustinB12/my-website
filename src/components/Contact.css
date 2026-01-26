@@ -1,0 +1,133 @@
+.contact {
+  background-color: var(--bg-secondary);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.contact-info p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.contact-icon {
+  font-size: 1.25rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 8px color(from var(--primary-color) srgb r g b / 0.6);
+}
+
+.contact-form {
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: 100%;
+}
+
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-success {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #d1fae5;
+  color: #065f46;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.form-error {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}

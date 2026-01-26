@@ -1,0 +1,110 @@
+.education {
+  background-color: var(--bg-secondary);
+}
+
+.education-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.education-item {
+  display: flex;
+  gap: 2rem;
+}
+
+.education-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.education-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px color(from var(--primary-color) srgb r g b / 0.2);
+}
+
+.education-line {
+  width: 2px;
+  flex-grow: 1;
+  background: linear-gradient(180deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  margin-top: 0.5rem;
+}
+
+.education-card {
+  background-color: var(--bg-color);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.education-year {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+}
+
+.education-degree {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.education-school {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.education-major {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.education-description {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .education-item {
+    gap: 1rem;
+  }
+
+  .education-card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .education-degree {
+    font-size: 1.1rem;
+  }
+}
