@@ -1,3 +1,6 @@
+import imgOne from '../assets/about-1.png?url';
+import imgTwo from '../assets/about-2.png?url';
+import imgThree from '../assets/about-3.png?url';
 import { Mood } from '@mui/icons-material';
 import './About.css';
 
@@ -13,17 +16,17 @@ function About() {
             <div className='about-image-placeholder'>
               <img
                 className='about-img'
-                src='/assets/about-1.png'
+                src={imgOne}
                 alt='Austin Baird'
               />
               <img
                 className='about-img'
-                src='/assets/about-2.png'
+                src={imgTwo}
                 alt='Austin Baird'
               />
               <img
                 className='about-img'
-                src='/assets/about-3.png'
+                src={imgThree}
                 alt='Austin Baird'
               />
             </div>

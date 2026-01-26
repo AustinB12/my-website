@@ -1,3 +1,4 @@
+import imgUrl from '../assets/me.png?url';
 import './Hero.css';
 
 function Hero() {
@@ -24,7 +25,7 @@ function Hero() {
         <div className='hero-image'>
           <img
             className='hero-image-placeholder'
-            src='/assets/me.png'
+            src={imgUrl}
             alt='Austin Baird'
           />
           <div className='hero-img-bg'></div>
