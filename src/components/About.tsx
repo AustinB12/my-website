@@ -13,17 +13,17 @@ function About() {
 						<div className="about-image-placeholder">
 							<img
 								className="about-img"
-								src={"/public/about-1.png"}
+								src={"/about-1.png"}
 								alt="Austin Baird"
 							/>
 							<img
 								className="about-img"
-								src={"/public/about-2.png"}
+								src={"/about-2.png"}
 								alt="Austin Baird"
 							/>
 							<img
 								className="about-img"
-								src={"/public/about-3.png"}
+								src={"/about-3.png"}
 								alt="Austin Baird"
 							/>
 						</div>

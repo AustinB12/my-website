@@ -24,7 +24,7 @@ function Hero() {
 				<div className="hero-image">
 					<img
 						className="hero-image-placeholder"
-						src={"public/me.png"}
+						src={"/me.png"}
 						alt="Austin Baird"
 					/>
 					<div className="hero-img-bg"></div>
