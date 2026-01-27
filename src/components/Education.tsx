@@ -1,56 +1,186 @@
-import { School } from '@mui/icons-material';
-import './Education.css';
+import { School } from "@mui/icons-material";
+import { Box, Typography } from "@mui/material";
 
 const education = [
-  {
-    degree: "Master's Degree",
-    major: 'Computer Science',
-    school: 'UNC Wilmington',
-    year: '2026 (Expected)',
-    description:
-      'Focused on software engineering, advanced algorithms, and managing information systems.',
-  },
-  {
-    degree: "Bachelor's Degree in CS",
-    major: 'Computer Science',
-    school: 'UNC Wilmington',
-    year: '2019',
-    description:
-      'Core curriculum in programming, data structures, and computer architecture. Graduated with honors.',
-  },
+	{
+		degree: "Master's Degree",
+		major: "Computer Science",
+		school: "UNC Wilmington",
+		year: "2026 (Expected)",
+		description:
+			"Focused on software engineering, advanced algorithms, and managing information systems."
+	},
+	{
+		degree: "Bachelor's Degree in CS",
+		major: "Computer Science",
+		school: "UNC Wilmington",
+		year: "2019",
+		description:
+			"Core curriculum in programming, data structures, and computer architecture. Graduated with honors."
+	}
 ];
 
 function Education() {
-  return (
-    <section id='education' className='education'>
-      <div className='container'>
-        <h2 className='section-title'>
-          Education <School color={'primary'} fontSize='large' />
-        </h2>
-        <div className='education-content'>
-          <div className='education-timeline'>
-            {education.map((item, index) => (
-              <div key={index} className='education-item'>
-                <div className='education-marker'>
-                  <div className='education-dot' />
-                  {index < education.length - 1 && (
-                    <div className='education-line' />
-                  )}
-                </div>
-                <div className='education-card'>
-                  <span className='education-year'>{item.year}</span>
-                  <h3 className='education-degree'>{item.degree}</h3>
-                  <span className='education-major'>{item.major}</span>
-                  <h4 className='education-school'>{item.school}</h4>
-                  <p className='education-description'>{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<Box
+			component="section"
+			sx={{ bgcolor: "background.paper", padding: "5rem 0" }}
+			id="education"
+		>
+			<Box
+				sx={{
+					maxWidth: "1200px",
+					margin: "0 auto",
+					padding: "0 2rem"
+				}}
+			>
+				<Typography
+					component="h2"
+					sx={{
+						fontSize: "2rem",
+						fontWeight: 700,
+						marginBottom: "2rem",
+						textAlign: "center",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						gap: "0.5rem"
+					}}
+				>
+					Education <School color="primary" fontSize="large" />
+				</Typography>
+				<Box
+					sx={{
+						maxWidth: "800px",
+						margin: "0 auto"
+					}}
+				>
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							gap: 0
+						}}
+					>
+						{education.map((item, index) => (
+							<Box
+								key={index}
+								sx={{
+									display: "flex",
+									gap: "2rem",
+									"@media (max-width: 768px)": { gap: "1rem" }
+								}}
+							>
+								<Box
+									sx={{
+										display: "flex",
+										flexDirection: "column",
+										alignItems: "center",
+										flexShrink: 0
+									}}
+								>
+									<Box
+										sx={{
+											width: "16px",
+											height: "16px",
+											background:
+												"linear-gradient(135deg, #1c6db8 0%, #433cae 100%)",
+											borderRadius: "50%",
+											boxShadow: "0 0 0 4px rgba(28, 109, 184, 0.2)"
+										}}
+									/>
+									{index < education.length - 1 && (
+										<Box
+											sx={{
+												width: "2px",
+												flexGrow: 1,
+												background:
+													"linear-gradient(180deg, #1c6db8 0%, #433cae 100%)",
+												marginTop: "0.5rem"
+											}}
+										/>
+									)}
+								</Box>
+								<Box
+									sx={{
+										backgroundColor: "background.default",
+										padding: { xs: "1.25rem 1.5rem", md: "1.5rem 2rem" },
+										borderRadius: "1rem",
+										boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
+										marginBottom: "2rem",
+										flexGrow: 1,
+										transition: "transform 0.3s ease, box-shadow 0.3s ease",
+										position: "relative",
+										"&:hover": {
+											transform: "translateY(-4px)",
+											boxShadow: "0 8px 30px rgba(0, 0, 0, 0.12)"
+										}
+									}}
+								>
+									<Typography
+										sx={{
+											display: "inline-block",
+											padding: "0.25rem 0.75rem",
+											background:
+												"linear-gradient(135deg, #1c6db8 0%, #433cae 100%)",
+											color: "white",
+											borderRadius: "2rem",
+											fontSize: "0.875rem",
+											fontWeight: 500,
+											marginBottom: "0.75rem",
+											position: "absolute",
+											right: "2rem",
+											top: "1.5rem"
+										}}
+									>
+										{item.year}
+									</Typography>
+									<Typography
+										sx={{
+											fontSize: "1.25rem",
+											fontWeight: 600,
+											color: "text.primary",
+											marginTop: "0.5rem"
+										}}
+									>
+										{item.degree}
+									</Typography>
+									<Typography
+										sx={{
+											fontSize: "1rem",
+											fontWeight: 500,
+											color: "primary.main",
+											marginBottom: "0.75rem"
+										}}
+									>
+										{item.school}
+									</Typography>
+									<Typography
+										sx={{
+											fontSize: "1rem",
+											fontWeight: 500,
+											marginBottom: "0.75rem"
+										}}
+									>
+										{item.major}
+									</Typography>
+									<Typography
+										sx={{
+											color: "text.secondary",
+											fontSize: "0.95rem",
+											lineHeight: 1.6
+										}}
+									>
+										{item.description}
+									</Typography>
+								</Box>
+							</Box>
+						))}
+					</Box>
+				</Box>
+			</Box>
+		</Box>
+	);
 }
 
 export default Education;

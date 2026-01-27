@@ -1,76 +1,183 @@
-import { Handyman } from '@mui/icons-material';
-import './Skills.css';
+import { Handyman } from "@mui/icons-material";
+import { Box, Typography } from "@mui/material";
 
 const skills = [
-  { name: 'JavaScript', level: 100 },
-  { name: 'TypeScript', level: 100 },
-  { name: 'React', level: 100 },
-  { name: 'SQL', level: 95 },
-  { name: 'Node.js', level: 90 },
-  { name: 'C#', level: 90 },
-  { name: '.NET', level: 90 },
-  { name: 'Git', level: 90 },
-  { name: 'Azure', level: 70 },
+	{ name: "JavaScript", level: 100 },
+	{ name: "TypeScript", level: 100 },
+	{ name: "React", level: 100 },
+	{ name: "SQL", level: 95 },
+	{ name: "Node.js", level: 90 },
+	{ name: "C#", level: 90 },
+	{ name: ".NET", level: 90 },
+	{ name: "Git", level: 90 },
+	{ name: "Azure", level: 70 }
 ];
 
 const technologies = [
-  'React',
-  'Next.js',
-  'Node.js',
-  'Express',
-  'SQL Server',
-  'PostgreSQL',
-  'MongoDB',
-  'Docker',
-  'Azure',
-  'GraphQL',
-  'REST APIs',
-  'CI/CD',
-  'Agile',
+	"React",
+	"Next.js",
+	"Node.js",
+	"Express",
+	"SQL Server",
+	"PostgreSQL",
+	"MongoDB",
+	"Docker",
+	"Azure",
+	"GraphQL",
+	"REST APIs",
+	"CI/CD",
+	"Agile"
 ];
 
 function Skills() {
-  return (
-    <section id='skills' className='skills'>
-      <div className='container'>
-        <h2 className='section-title'>
-          Skills & Technologies
-          <Handyman color={'primary'} fontSize='large' />
-        </h2>
+	return (
+		<Box
+			component="section"
+			id="skills"
+			sx={{
+				bgcolor: "background.default",
+				padding: "5rem 0"
+			}}
+		>
+			<Box
+				sx={{
+					maxWidth: "1200px",
+					margin: "0 auto",
+					padding: "0 2rem"
+				}}
+			>
+				<Typography
+					component="h2"
+					sx={{
+						fontSize: "2rem",
+						fontWeight: 700,
+						marginBottom: "2rem",
+						textAlign: "center",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						gap: "0.5rem"
+					}}
+				>
+					Skills & Technologies
+					<Handyman color="primary" fontSize="large" />
+				</Typography>
 
-        <div className='skills-content'>
-          <div className='skills-bars'>
-            <h3>Core Skills</h3>
-            {skills.map((skill) => (
-              <div key={skill.name} className='skill-item'>
-                <div className='skill-header'>
-                  <span className='skill-name'>{skill.name}</span>
-                  <span className='skill-percentage'>{skill.level}%</span>
-                </div>
-                <div className='skill-bar'>
-                  <div
-                    className='skill-progress'
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+						gap: "4rem",
+						"@media (max-width: 768px)": {
+							gridTemplateColumns: "1fr"
+						}
+					}}
+				>
+					<Box>
+						<Typography
+							sx={{
+								fontSize: "1.25rem",
+								marginBottom: "1.5rem",
+								color: "text.primary",
+								fontWeight: 600
+							}}
+						>
+							Core Skills
+						</Typography>
+						{skills.map((skill) => (
+							<Box key={skill.name} sx={{ marginBottom: "1.25rem" }}>
+								<Box
+									sx={{
+										display: "flex",
+										justifyContent: "space-between",
+										marginBottom: "0.5rem"
+									}}
+								>
+									<Typography
+										sx={{
+											fontWeight: 500,
+											color: "text.primary"
+										}}
+									>
+										{skill.name}
+									</Typography>
+									<Typography
+										sx={{
+											color: "text.secondary",
+											fontSize: "0.875rem"
+										}}
+									>
+										{skill.level}%
+									</Typography>
+								</Box>
+								<Box
+									sx={{
+										height: "8px",
+										backgroundColor: "#e5e7eb",
+										borderRadius: "4px",
+										overflow: "hidden"
+									}}
+								>
+									<Box
+										sx={{
+											height: "100%",
+											background:
+												"linear-gradient(90deg, #1c6db8 0%, #433cae 100%)",
+											borderRadius: "4px",
+											transition: "width 0.5s ease",
+											width: `${skill.level}%`
+										}}
+									/>
+								</Box>
+							</Box>
+						))}
+					</Box>
 
-          <div className='technologies'>
-            <h3>Technologies I Work With</h3>
-            <div className='tech-grid'>
-              {technologies.map((tech) => (
-                <span key={tech} className='tech-tag'>
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+					<Box>
+						<Typography
+							sx={{
+								fontSize: "1.25rem",
+								marginBottom: "1.5rem",
+								color: "text.primary",
+								fontWeight: 600
+							}}
+						>
+							Technologies I Work With
+						</Typography>
+						<Box
+							sx={{
+								display: "flex",
+								flexWrap: "wrap",
+								gap: "0.75rem"
+							}}
+						>
+							{technologies.map((tech) => (
+								<Typography
+									key={tech}
+									sx={{
+										padding: "0.5rem 1rem",
+										backgroundColor: "background.default",
+										borderRadius: "2rem",
+										fontSize: "0.875rem",
+										color: "text.primary",
+										boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
+										transition: "all 0.3s ease",
+										"&:hover": {
+											backgroundColor: "primary.main",
+											color: "white",
+											transform: "translateY(-2px)"
+										}
+									}}
+								>
+									{tech}
+								</Typography>
+							))}
+						</Box>
+					</Box>
+				</Box>
+			</Box>
+		</Box>
+	);
 }
 
 export default Skills;

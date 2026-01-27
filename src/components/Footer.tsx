@@ -1,66 +1,161 @@
-import './Footer.css';
+import { Box, Link, Typography } from "@mui/material";
+
+interface FooterLinkItem {
+	label: string;
+	href: string;
+	external?: boolean;
+}
+
+interface FooterSectionProps {
+	title: string;
+	links: FooterLinkItem[];
+}
+
+const FooterLink = ({
+	href,
+	label,
+	external,
+	isLast
+}: FooterLinkItem & { isLast?: boolean }) => (
+	<li style={{ marginBottom: isLast ? 0 : "0.75rem" }}>
+		<Link
+			href={href}
+			sx={{
+				color: "text.secondary",
+				textDecoration: "none",
+				transition: "color 0.3s ease",
+				"&:hover": {
+					color: "text.primary",
+					fontWeight: 500
+				}
+			}}
+			{...(external && { target: "_blank", rel: "noopener noreferrer" })}
+		>
+			{label}
+		</Link>
+	</li>
+);
+
+const FooterSection = ({ title, links }: FooterSectionProps) => (
+	<Box>
+		<Typography
+			sx={{
+				fontSize: "1rem",
+				fontWeight: 600,
+				marginBottom: "1rem"
+			}}
+		>
+			{title}
+		</Typography>
+		<Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0 }}>
+			{links.map((link, idx) => (
+				<FooterLink
+					key={link.href}
+					{...link}
+					isLast={idx === links.length - 1}
+				/>
+			))}
+		</Box>
+	</Box>
+);
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
+	const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className='footer'>
-      <div className='container footer-content'>
-        <div className='footer-brand'>
-          <a href='#' className='footer-logo'>
-            AustinBaird<span>.software</span>
-          </a>
-          <p>Building great software, one line at a time.</p>
-        </div>
-        <div className='footer-links'>
-          <div className='footer-section'>
-            <h4>Navigation</h4>
-            <div className='links-holder'>
-              <ul>
-                <li>
-                  <a href='#about'>About</a>
-                </li>
-                <li>
-                  <a href='#skills'>Skills</a>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <a href='#projects'>Projects</a>
-                </li>
-                <li>
-                  <a href='#experience'>Experience</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className='footer-section'>
-            <h4>Connect</h4>
-            <div className='links-holder'>
-              <ul>
-                <li>
-                  <a href='#'>GitHub</a>
-                </li>
-                <li>
-                  <a href='#'>LinkedIn</a>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <a href='#'>Email</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='footer-bottom'>
-        <div className='container'>
-          <p>© {currentYear} Austin. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
+	const navigationLinks: FooterLinkItem[] = [
+		{ label: "About", href: "#about" },
+		{ label: "Skills", href: "#skills" }
+	];
+
+	const connectLinks: FooterLinkItem[] = [
+		{
+			label: "GitHub",
+			href: "https://github.com/austinbaird12",
+			external: true
+		},
+		{
+			label: "LinkedIn",
+			href: "https://www.linkedin.com/in/im-austin-baird/",
+			external: true
+		},
+		{ label: "Email", href: "mailto:austinzbaird@gmail.com" }
+	];
+
+	return (
+		<Box
+			component="footer"
+			sx={{
+				bgcolor: "background.default",
+				paddingTop: "1.5rem"
+			}}
+		>
+			<Box
+				sx={{
+					maxWidth: "1200px",
+					margin: "0 auto",
+					padding: "0 2rem",
+					display: "grid",
+					gridTemplateColumns: { xs: "1fr", md: "2fr 1fr 1fr" },
+					gap: "4rem",
+					paddingBottom: "1.5rem",
+					"@media (max-width: 768px)": {
+						textAlign: "center"
+					}
+				}}
+			>
+				<Box>
+					<Link
+						href="#"
+						sx={{
+							fontSize: "1.5rem",
+							fontWeight: 700,
+							textDecoration: "none"
+						}}
+					>
+						AustinBaird<span>.software</span>
+					</Link>
+					<Typography
+						sx={{
+							marginTop: "1rem"
+						}}
+					>
+						Building great software, one line at a time.
+					</Typography>
+				</Box>
+				<Box
+					sx={{
+						display: "flex",
+						gap: "3rem",
+						flexDirection: "row",
+						"@media (max-width: 768px)": {
+							justifyContent: "center"
+						}
+					}}
+				>
+					<FooterSection title="Navigation" links={navigationLinks} />
+				</Box>
+				<FooterSection title="Connect" links={connectLinks} />
+			</Box>
+			<Box
+				sx={{
+					padding: "1.5rem 0",
+					textAlign: "center"
+				}}
+			>
+				<Box
+					sx={{
+						maxWidth: "1200px",
+						margin: "0 auto",
+						padding: "0 2rem"
+					}}
+				>
+					<Typography sx={{ color: "text.secondary", fontSize: "0.875rem" }}>
+						© {currentYear} Austin. All rights reserved.
+					</Typography>
+				</Box>
+			</Box>
+		</Box>
+	);
 }
 
 export default Footer;
