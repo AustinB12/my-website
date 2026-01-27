@@ -17,7 +17,7 @@ const FooterLink = ({
 	external,
 	isLast
 }: FooterLinkItem & { isLast?: boolean }) => (
-	<li style={{ marginBottom: isLast ? 0 : "0.75rem" }}>
+	<li style={{ marginBottom: isLast ? 0 : "0.5rem" }}>
 		<Link
 			href={href}
 			sx={{
@@ -86,7 +86,7 @@ function Footer() {
 			component="footer"
 			sx={{
 				bgcolor: "background.default",
-				paddingTop: "1.5rem"
+				paddingTop: "1rem"
 			}}
 		>
 			<Box
@@ -97,7 +97,6 @@ function Footer() {
 					display: "grid",
 					gridTemplateColumns: { xs: "1fr", md: "2fr 1fr 1fr" },
 					gap: "4rem",
-					paddingBottom: "1.5rem",
 					"@media (max-width: 768px)": {
 						textAlign: "center"
 					}
@@ -138,7 +137,7 @@ function Footer() {
 			</Box>
 			<Box
 				sx={{
-					padding: "1.5rem 0",
+					padding: "1rem 0",
 					textAlign: "center"
 				}}
 			>
@@ -146,11 +145,11 @@ function Footer() {
 					sx={{
 						maxWidth: "1200px",
 						margin: "0 auto",
-						padding: "0 2rem"
+						padding: "0 1rem"
 					}}
 				>
 					<Typography sx={{ color: "text.secondary", fontSize: "0.875rem" }}>
-						© {currentYear} Austin. All rights reserved.
+						© {currentYear} | All rights reserved.
 					</Typography>
 				</Box>
 			</Box>
