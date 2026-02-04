@@ -7,11 +7,11 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-	{ label: "About", href: "#about" },
-	{ label: "Skills", href: "#skills" },
-	{ label: "Projects", href: "#projects" },
-	{ label: "Experience", href: "#experience" },
-	{ label: "Contact", href: "#contact" }
+	{ label: "About", href: "/#about" },
+	{ label: "Skills", href: "/#skills" },
+	{ label: "Projects", href: "/#projects" },
+	{ label: "Experience", href: "/#experience" },
+	{ label: "Contact", href: "/#contact" }
 ];
 
 const NavLink = ({ label, href }: NavItem) => (
@@ -77,27 +77,31 @@ function Header() {
 			sx={{
 				position: "fixed",
 				top: 0,
-				left: 0,
-				right: 0,
+				left: "50%",
+				transform: "translateX(-50%)",
+				m: 1,
 				backdropFilter: "blur(10px)",
 				zIndex: 1000,
-				padding: "1rem 0",
+				padding: "0.8rem 0",
 				boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
-				bgcolor: "background.default"
+				bgcolor: "#ffffff30",
+				borderRadius: "500px",
+				display: "flex",
+				justifyContent: "center"
 			}}
 		>
 			<Box
 				sx={{
 					maxWidth: "1200px",
-					margin: "0 auto",
 					padding: "0 2rem",
 					display: "flex",
 					alignItems: "center",
-					justifyContent: "space-between"
+					justifyContent: "space-between",
+					gap: 6
 				}}
 			>
 				<Link
-					href="#"
+					href="/"
 					sx={{
 						fontSize: "1.5rem",
 						fontWeight: 700,

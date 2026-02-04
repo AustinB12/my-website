@@ -1,14 +1,13 @@
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Triangle } from "ogl";
-import "./Grainient.css";
 
-const hexToRgb = (hex) => {
+const hexToRgb = (hex: string) => {
 	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	if (!result) return [1, 1, 1];
 	return [
-		parseInt(result[1], 16) / 255,
-		parseInt(result[2], 16) / 255,
-		parseInt(result[3], 16) / 255
+		parseInt(result[1] || "0", 16) / 255,
+		parseInt(result[2] || "0", 16) / 255,
+		parseInt(result[3] || "0", 16) / 255
 	];
 };
 
@@ -125,8 +124,7 @@ const Grainient = ({
 	zoom = 0.9,
 	color1 = "#FF9FFC",
 	color2 = "#5227FF",
-	color3 = "#B19EEF",
-	className = ""
+	color3 = "#B19EEF"
 }) => {
 	const containerRef = useRef(null);
 
@@ -242,7 +240,12 @@ const Grainient = ({
 	return (
 		<div
 			ref={containerRef}
-			className={`grainient-container ${className}`.trim()}
+			style={{
+				position: "relative",
+				width: "100%",
+				height: "100%",
+				overflow: "hidden"
+			}}
 		/>
 	);
 };

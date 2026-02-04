@@ -77,8 +77,7 @@ function Footer() {
 			label: "LinkedIn",
 			href: "https://www.linkedin.com/in/im-austin-baird/",
 			external: true
-		},
-		{ label: "Email", href: "mailto:austinzbaird@gmail.com" }
+		}
 	];
 
 	return (
@@ -96,7 +95,7 @@ function Footer() {
 					padding: "0 2rem",
 					display: "grid",
 					gridTemplateColumns: { xs: "1fr", md: "2fr 1fr 1fr" },
-					gap: "4rem",
+					gap: { xs: "2rem", md: "4rem" },
 					"@media (max-width: 768px)": {
 						textAlign: "center"
 					}
@@ -132,8 +131,8 @@ function Footer() {
 					}}
 				>
 					<FooterSection title="Navigation" links={navigationLinks} />
+					<FooterSection title="Connect" links={connectLinks} />
 				</Box>
-				<FooterSection title="Connect" links={connectLinks} />
 			</Box>
 			<Box
 				sx={{
