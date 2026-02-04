@@ -134,6 +134,7 @@ function Hero() {
               objectFit: 'cover',
             }}
           />
+
           <Box
             sx={{
               backgroundImage:
