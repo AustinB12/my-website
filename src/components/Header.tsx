@@ -132,6 +132,7 @@ function Header() {
 						{navItems.map((item) => (
 							<NavLink key={item.href} {...item} />
 						))}
+						<NavLink label="Blog" href="/blog" />
 						<li>
 							<LightDarkToggle />
 						</li>

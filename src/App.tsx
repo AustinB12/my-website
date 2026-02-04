@@ -1,3 +1,7 @@
+import { ThemeProvider, Box } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,9 +12,9 @@ import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 
-import { ThemeProvider, Box } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./utils/theme";
+import Blog_Post_Page from "./blog/Blog_Post_Page";
+import Blog_Home from "./blog/Blog_Home";
 
 function App() {
 	return (
@@ -24,15 +28,27 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Header />
-				<Box component="main" sx={{ flex: 1 }}>
-					<Hero />
-					<About />
-					<Experience />
-					<Skills />
-					<Education />
-					<Projects />
-					<Contact />
-				</Box>
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<Box component="main" sx={{ flex: 1 }}>
+								<Hero />
+								<About />
+								<Experience />
+								<Skills />
+								<Education />
+								<Projects />
+								<Contact />
+							</Box>
+						}
+					/>
+					<Route path="/blog">
+						<Route path=":post_id" element={<Blog_Post_Page />} />
+						<Route index element={<Blog_Home />} />
+					</Route>
+					<Route path="*" element={<div>Page Not Found</div>} />
+				</Routes>
 				<Footer />
 			</ThemeProvider>
 		</Box>
