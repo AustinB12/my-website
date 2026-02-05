@@ -63,7 +63,7 @@ function Hero() {
 			</div>
 			<Box
 				sx={{
-					maxWidth: "1200px",
+					maxWidth: "1650px",
 					margin: "0 auto",
 					padding: "0 2rem",
 					display: "grid",
@@ -79,14 +79,15 @@ function Hero() {
 						bgcolor: theme.palette.mode === "dark" ? "#00000036" : "#ffffff40",
 						backdropFilter: "blur(10px)",
 						p: 4,
-						borderRadius: 8
+						borderRadius: 20,
+						cornerShape: "squircle"
 					})}
 				>
 					<Typography
 						sx={{
 							color: "primary.main",
 							fontWeight: 500,
-							fontSize: "1.125rem",
+							fontSize: { xs: "1rem", md: "1.125rem", lg: "1.75rem" },
 							marginBottom: "0.5rem"
 						}}
 					>
@@ -97,7 +98,7 @@ function Hero() {
 						color="primary"
 						sx={{
 							marginBottom: "0.5rem",
-							fontSize: { xs: "2rem", md: "4rem" }
+							fontSize: { xs: "2rem", md: "4rem", lg: "6rem" }
 						}}
 					>
 						<TextType
