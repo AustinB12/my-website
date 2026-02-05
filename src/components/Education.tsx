@@ -60,6 +60,7 @@ function Education() {
 					}}
 				>
 					<Chip
+						component="span"
 						sx={{
 							position: "absolute",
 							top: -18,

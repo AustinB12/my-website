@@ -166,6 +166,7 @@ function Experience() {
 										>
 											{exp.company}
 											<Chip
+												component={"span"}
 												label={`${exp.years} Year${exp.years > 1 ? "s" : ""}`}
 												size="small"
 												sx={{ ml: 1 }}

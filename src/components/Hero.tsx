@@ -97,7 +97,7 @@ function Hero() {
 						color="primary"
 						sx={{
 							marginBottom: "0.5rem",
-							fontSize: { xs: "3rem", md: "4rem" }
+							fontSize: { xs: "2rem", md: "4rem" }
 						}}
 					>
 						<TextType
@@ -115,16 +115,17 @@ function Hero() {
 					<Typography
 						variant="h2"
 						sx={{
-							marginBottom: "1.5rem"
+							marginBottom: "1.5rem",
+							fontSize: { xs: "1.25rem", md: "2rem" }
 						}}
 					>
 						Full Stack Software Engineer
 					</Typography>
 					<Typography
 						sx={{
-							fontSize: "1.125rem",
 							maxWidth: "500px",
-							marginBottom: "3rem"
+							marginBottom: "3rem",
+							fontSize: { xs: "0.8rem", md: "1.125rem" }
 						}}
 					>
 						I build exceptional software that is performant, accessible, and
@@ -141,10 +142,10 @@ function Hero() {
 						}}
 					>
 						<Button href="#projects" variant="contained" color="primary">
-							View My Work
+							My Work
 						</Button>
 						<Button href="#contact" variant="outlined" color="primary">
-							Contact Me
+							Contact
 						</Button>
 					</Box>
 				</Box>
