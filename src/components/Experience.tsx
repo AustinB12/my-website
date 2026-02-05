@@ -59,7 +59,10 @@ function Experience() {
 	return (
 		<Box
 			component="section"
-			sx={{ bgcolor: "background.paper", padding: "5rem 0" }}
+			sx={{
+				bgcolor: "background.paper",
+				padding: { xs: "3rem 0", md: "4rem 0" }
+			}}
 			id="experience"
 		>
 			<Box

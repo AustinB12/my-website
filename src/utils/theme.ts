@@ -5,33 +5,40 @@ const theme = createTheme({
 		dark: {
 			palette: {
 				primary: {
-					main: "#433cae",
-					light: "#5148c7ff",
-					dark: "#312a86ff"
+					main: "#70e000",
+					light: "#8aff14",
+					dark: "#57ad00"
 				},
 				secondary: {
-					main: "#823cc1",
-					light: "#9749dbff",
-					dark: "#6e2ea7ff"
+					main: "#004b23",
+					light: "#06793c",
+					dark: "#023118"
+				},
+				text: {
+					primary: "#fdfcfb",
+					secondary: "#ece3da",
+					primaryChannel: "#ffffff"
 				},
 				background: {
-					default: "#202020",
-					paper: "#181818"
+					default: "#181818",
+					paper: "#2b2b2b"
 				}
 			}
 		},
 		light: {
 			palette: {
 				primary: {
-					main: "#1c6db8",
-					light: "#32b3e0"
+					main: "#3d7a00",
+					light: "#57ad00",
+					dark: "#244700"
 				},
 				secondary: {
 					main: "#32b3e0"
 				},
 				text: {
-					primary: "#1f2937",
-					secondary: "#6b7280"
+					primary: "#171717",
+					secondary: "#4b4b49",
+					primaryChannel: "#ffffff"
 				},
 				background: {
 					default: "#ffffff",

@@ -1,4 +1,5 @@
-import { Box, Link, Typography } from "@mui/material";
+import { ArrowUpward } from "@mui/icons-material";
+import { Box, Button, Link, Typography } from "@mui/material";
 
 interface FooterLinkItem {
 	label: string;
@@ -63,8 +64,8 @@ function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	const navigationLinks: FooterLinkItem[] = [
-		{ label: "About", href: "#about" },
-		{ label: "Skills", href: "#skills" }
+		{ label: "Top", href: "/" },
+		{ label: "Blog", href: "/blog" }
 	];
 
 	const connectLinks: FooterLinkItem[] = [
@@ -95,7 +96,7 @@ function Footer() {
 					padding: "0 2rem",
 					display: "grid",
 					gridTemplateColumns: { xs: "1fr", md: "2fr 1fr 1fr" },
-					gap: { xs: "2rem", md: "4rem" },
+					gap: { xs: "1rem", md: "3rem" },
 					"@media (max-width: 768px)": {
 						textAlign: "center"
 					}
@@ -107,7 +108,11 @@ function Footer() {
 						sx={{
 							fontSize: "1.5rem",
 							fontWeight: 700,
-							textDecoration: "none"
+							textDecoration: "none",
+							color: "inherit",
+							"& span": {
+								color: "primary.main"
+							}
 						}}
 					>
 						AustinBaird<span>.software</span>
@@ -130,8 +135,16 @@ function Footer() {
 						}
 					}}
 				>
-					<FooterSection title="Navigation" links={navigationLinks} />
-					<FooterSection title="Connect" links={connectLinks} />
+					{/* <FooterSection title="Navigation" links={navigationLinks} />
+					<FooterSection title="Connect" links={connectLinks} /> */}
+					<Button
+						sx={{ py: 0.75, px: 1.5, height: "min-content" }}
+						startIcon={<ArrowUpward />}
+						variant="outlined"
+						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+					>
+						Back To Top
+					</Button>
 				</Box>
 			</Box>
 			<Box

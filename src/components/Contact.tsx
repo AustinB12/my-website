@@ -59,7 +59,10 @@ function Contact() {
 	return (
 		<Box
 			component="section"
-			sx={{ bgcolor: "background.paper", padding: "5rem 0" }}
+			sx={{
+				bgcolor: "background.paper",
+				padding: { xs: "3rem 0", md: "4rem 0" }
+			}}
 			id="contact"
 		>
 			<Box
@@ -246,7 +249,10 @@ function Contact() {
 							color="primary"
 							disabled={isSubmitting}
 							fullWidth
-							sx={{ mt: 2 }}
+							sx={(theme) => ({
+								mt: 2,
+								background: `linear-gradient(0deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`
+							})}
 						>
 							{isSubmitting ? "Sending..." : "Send"}
 						</Button>

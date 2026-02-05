@@ -26,7 +26,7 @@ function Education() {
 			component="section"
 			sx={{
 				bgcolor: "background.paper",
-				padding: "5rem 0"
+				padding: { xs: "3rem 0", md: "4rem 0" }
 			}}
 			id="education"
 		>
@@ -99,24 +99,22 @@ function Education() {
 									}}
 								>
 									<Box
-										sx={{
+										sx={(theme) => ({
 											width: "16px",
 											height: "16px",
-											background:
-												"linear-gradient(135deg, #1c6db8 0%, #433cae 100%)",
+											background: `linear-gradient(90deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
 											borderRadius: "50%",
 											boxShadow: "0 0 0 4px rgba(28, 109, 184, 0.2)"
-										}}
+										})}
 									/>
 									{index < education.length - 1 && (
 										<Box
-											sx={{
+											sx={(theme) => ({
 												width: "2px",
 												flexGrow: 1,
-												background:
-													"linear-gradient(180deg, #1c6db8 0%, #433cae 100%)",
+												background: `linear-gradient(90deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
 												marginTop: "0.5rem"
-											}}
+											})}
 										/>
 									)}
 								</Box>
@@ -136,11 +134,10 @@ function Education() {
 									}}
 								>
 									<Typography
-										sx={{
+										sx={(theme) => ({
 											display: "inline-block",
 											padding: "0.25rem 0.75rem",
-											background:
-												"linear-gradient(135deg, #1c6db8 0%, #433cae 100%)",
+											background: `linear-gradient(90deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 100%)`,
 											color: "white",
 											borderRadius: "2rem",
 											fontSize: "0.875rem",
@@ -149,7 +146,7 @@ function Education() {
 											position: "absolute",
 											right: "2rem",
 											top: "1.5rem"
-										}}
+										})}
 									>
 										{item.year}
 									</Typography>

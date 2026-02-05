@@ -39,13 +39,13 @@ export default function Blog_Home() {
 					width: "100vw",
 					height: "100vh",
 					zIndex: -1,
-					opacity: 0.75
+					opacity: 0.55
 				}}
 			>
 				<Grainient
-					color1="#b448db"
-					color2="#613fe9"
-					color3="#7c30d9"
+					color1="#02d430"
+					color2="#04632f"
+					color3="#0d8802"
 					timeSpeed={0.25}
 					colorBalance={0}
 					warpStrength={1}

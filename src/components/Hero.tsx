@@ -32,14 +32,14 @@ function Hero() {
 					width: "100%",
 					height: "100%",
 					zIndex: 0,
-					opacity: 0.45,
+					opacity: 0.25,
 					overflow: "hidden"
 				}}
 			>
 				<Grainient
-					color1="#b448db"
-					color2="#613fe9"
-					color3="#7c30d9"
+					color1="#02d430"
+					color2="#04632f"
+					color3="#0d8802"
 					timeSpeed={0.25}
 					colorBalance={0}
 					warpStrength={1}
@@ -55,7 +55,7 @@ function Hero() {
 					grainAnimated={false}
 					contrast={1.5}
 					gamma={1}
-					saturation={1}
+					saturation={0.5}
 					centerX={0}
 					centerY={0}
 					zoom={0.9}
@@ -67,7 +67,7 @@ function Hero() {
 					margin: "0 auto",
 					padding: "0 2rem",
 					display: "grid",
-					gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+					gridTemplateColumns: { xs: "1fr", md: "7fr 5fr" },
 					gap: "2rem",
 					alignItems: "center",
 					width: "100%",
@@ -85,7 +85,7 @@ function Hero() {
 				>
 					<Typography
 						sx={{
-							color: "primary.main",
+							color: "primary.light",
 							fontWeight: 500,
 							fontSize: { xs: "1rem", md: "1.125rem", lg: "1.75rem" },
 							marginBottom: "0.5rem"
@@ -95,10 +95,10 @@ function Hero() {
 					</Typography>
 					<Typography
 						variant="h1"
-						color="primary"
+						color="primary.main"
 						sx={{
 							marginBottom: "0.5rem",
-							fontSize: { xs: "2rem", md: "4rem", lg: "6rem" }
+							fontSize: { xs: "2rem", md: "calc(2.2rem + 2vw)", xl: "6rem" }
 						}}
 					>
 						<TextType
@@ -169,7 +169,7 @@ function Hero() {
 							width: { xs: "250px", md: "350px" },
 							height: { xs: "250px", md: "350px" },
 							borderRadius: "50%",
-							boxShadow: "0 25px 50px -12px rgba(37, 99, 235, 0.25)",
+							boxShadow: 3,
 							zIndex: 1,
 							objectFit: "cover"
 						}}
@@ -178,7 +178,7 @@ function Hero() {
 					<Box
 						sx={{
 							backgroundImage:
-								"linear-gradient(to bottom right, #1c6db8, #32b3e0)",
+								"linear-gradient(to bottom right, #004b23, #8aff14)",
 							position: "absolute",
 							width: { xs: "265px", md: "365px" },
 							height: { xs: "265px", md: "365px" },

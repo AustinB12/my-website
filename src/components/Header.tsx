@@ -7,30 +7,26 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-	{ label: "About", href: "/#about" },
 	{ label: "Skills", href: "/#skills" },
 	{ label: "Projects", href: "/#projects" },
-	{ label: "Experience", href: "/#experience" },
-	{ label: "Contact", href: "/#contact" }
+	{ label: "Experience", href: "/#experience" }
 ];
 
 const NavLink = ({ label, href }: NavItem) => (
-	<li>
-		<Link
-			href={href}
-			sx={{
-				fontWeight: 500,
-				transition: "color 0.3s ease",
-				textDecoration: "none",
-				color: "text.primary",
-				"&:hover": {
-					color: "primary.main"
-				}
-			}}
-		>
-			{label}
-		</Link>
-	</li>
+	<Link
+		href={href}
+		sx={{
+			fontWeight: 500,
+			transition: "color 0.3s ease",
+			textDecoration: "none",
+			color: "text.primary",
+			"&:hover": {
+				color: "primary.main"
+			}
+		}}
+	>
+		{label}
+	</Link>
 );
 
 const ThemeIcon = ({
@@ -57,6 +53,7 @@ const LightDarkToggle = () => {
 	return (
 		<IconButton
 			onClick={() => setMode(mode !== "dark" ? "dark" : "light")}
+			title="Toggle the light/dark mode"
 			sx={{
 				overflow: "clip",
 				position: "relative",
@@ -103,7 +100,7 @@ function Header() {
 				<Link
 					href="/"
 					sx={{
-						fontSize: "1.5rem",
+						fontSize: { xs: "1rem", md: "1.5rem" },
 						fontWeight: 700,
 						textDecoration: "none",
 						color: "inherit",
@@ -136,12 +133,10 @@ function Header() {
 						{navItems.map((item) => (
 							<NavLink key={item.href} {...item} />
 						))}
-						<NavLink label="Blog" href="/blog" />
-						<li>
-							<LightDarkToggle />
-						</li>
 					</Box>
 				</Box>
+				<NavLink label="Blog" href="/blog" />
+				<LightDarkToggle />
 			</Box>
 		</Box>
 	);

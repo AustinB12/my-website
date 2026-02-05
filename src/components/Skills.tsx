@@ -36,7 +36,7 @@ function Skills() {
 			id="skills"
 			sx={{
 				bgcolor: "background.default",
-				padding: "5rem 0"
+				padding: { xs: "3rem 0", md: "4rem 0" }
 			}}
 		>
 			<Box
@@ -119,14 +119,13 @@ function Skills() {
 									}}
 								>
 									<Box
-										sx={{
+										sx={(theme) => ({
 											height: "100%",
-											background:
-												"linear-gradient(90deg, #1c6db8 0%, #433cae 100%)",
+											background: `linear-gradient(90deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
 											borderRadius: "4px",
 											transition: "width 0.5s ease",
 											width: `${skill.level}%`
-										}}
+										})}
 									/>
 								</Box>
 							</Box>
