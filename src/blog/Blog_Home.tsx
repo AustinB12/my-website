@@ -83,6 +83,7 @@ export default function Blog_Home() {
 			>
 				{"Coming Soon..."}
 			</Typography>
+			<Link to="/blog/1">Go to my first blog post</Link>
 		</Container>
 	);
 }
