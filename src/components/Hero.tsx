@@ -1,7 +1,8 @@
-import { Box, Typography, Button } from "@mui/material";
-import { keyframes } from "@mui/system";
-import TextType from "./TextType";
-import Grainient from "./Gradient";
+import { Box, Typography, Button } from '@mui/material';
+import { keyframes } from '@mui/system';
+import TextType from './TextType';
+import Grainient from './Gradient';
+import Profile_Card from './Profile_Card';
 
 const rotate = keyframes`
 	from {
@@ -13,186 +14,159 @@ const rotate = keyframes`
 `;
 
 function Hero() {
-	return (
-		<Box
-			component="section"
-			sx={{
-				bgcolor: "background.paper",
-				minHeight: "100vh",
-				display: "flex",
-				alignItems: "center",
-				paddingTop: "5rem"
-			}}
-		>
-			<div
-				style={{
-					position: "absolute",
-					top: 0,
-					left: 0,
-					width: "100%",
-					height: "100%",
-					zIndex: 0,
-					opacity: 0.25,
-					overflow: "hidden"
-				}}
-			>
-				<Grainient
-					color1="#02d430"
-					color2="#04632f"
-					color3="#0d8802"
-					timeSpeed={0.25}
-					colorBalance={0}
-					warpStrength={1}
-					warpFrequency={5}
-					warpSpeed={2}
-					warpAmplitude={50}
-					blendAngle={0}
-					blendSoftness={0.05}
-					rotationAmount={500}
-					noiseScale={2}
-					grainAmount={0.1}
-					grainScale={2}
-					grainAnimated={false}
-					contrast={1.5}
-					gamma={1}
-					saturation={0.5}
-					centerX={0}
-					centerY={0}
-					zoom={0.9}
-				/>
-			</div>
-			<Box
-				sx={{
-					maxWidth: "1650px",
-					margin: "0 auto",
-					padding: "0 2rem",
-					display: "grid",
-					gridTemplateColumns: { xs: "1fr", md: "7fr 5fr" },
-					gap: "2rem",
-					alignItems: "center",
-					width: "100%",
-					zIndex: 2
-				}}
-			>
-				<Box
-					sx={(theme) => ({
-						bgcolor: theme.palette.mode === "dark" ? "#00000036" : "#ffffff40",
-						backdropFilter: "blur(10px)",
-						p: 4,
-						borderRadius: 20,
-						cornerShape: "squircle"
-					})}
-				>
-					<Typography
-						sx={{
-							color: "primary.light",
-							fontWeight: 500,
-							fontSize: { xs: "1rem", md: "1.125rem", lg: "1.75rem" },
-							marginBottom: "0.5rem"
-						}}
-					>
-						Hello, I'm
-					</Typography>
-					<Typography
-						variant="h1"
-						color="primary.main"
-						sx={{
-							marginBottom: "0.5rem",
-							fontSize: { xs: "2rem", md: "calc(2.2rem + 2vw)", xl: "6rem" }
-						}}
-					>
-						<TextType
-							typingSpeed={75}
-							initialDelay={500}
-							pauseDuration={6000}
-							showCursor
-							cursorCharacter="▮"
-							text={["Austin Baird"]}
-							deletingSpeed={50}
-							cursorBlinkDuration={0.5}
-						/>
-					</Typography>
+  return (
+    <Box
+      component='section'
+      sx={{
+        bgcolor: 'background.paper',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: { xs: '0rem', md: '5rem' },
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          opacity: 0.25,
+          overflow: 'hidden',
+        }}
+      >
+        <Grainient
+          color1='#02d430'
+          color2='#04632f'
+          color3='#0d8802'
+          timeSpeed={0.25}
+          colorBalance={0}
+          warpStrength={1}
+          warpFrequency={5}
+          warpSpeed={2}
+          warpAmplitude={50}
+          blendAngle={0}
+          blendSoftness={0.05}
+          rotationAmount={500}
+          noiseScale={2}
+          grainAmount={0.1}
+          grainScale={2}
+          grainAnimated={false}
+          contrast={1.5}
+          gamma={1}
+          saturation={0.5}
+          centerX={0}
+          centerY={0}
+          zoom={0.9}
+        />
+      </div>
+      <Box
+        sx={{
+          maxWidth: '1650px',
+          margin: '0 auto',
+          padding: '0 2rem',
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '7fr 5fr' },
+          gap: '2rem',
+          alignItems: 'center',
+          width: '100%',
+          zIndex: 2,
+        }}
+      >
+        <Box
+          sx={(theme) => ({
+            bgcolor: theme.palette.mode === 'dark' ? '#00000036' : '#ffffff40',
+            backdropFilter: 'blur(10px)',
+            p: 4,
+            borderRadius: 20,
+            cornerShape: 'squircle',
+          })}
+        >
+          <Typography
+            sx={{
+              color: 'primary.light',
+              fontWeight: 500,
+              fontSize: { xs: '1rem', md: '1.125rem', lg: '1.75rem' },
+              marginBottom: '0.5rem',
+            }}
+          >
+            Hello, I'm
+          </Typography>
+          <Typography
+            variant='h1'
+            color='primary.main'
+            sx={{
+              marginBottom: '0.5rem',
+              fontSize: { xs: '2rem', md: 'calc(2.2rem + 2vw)', xl: '6rem' },
+            }}
+          >
+            <TextType
+              typingSpeed={75}
+              initialDelay={500}
+              pauseDuration={6000}
+              showCursor
+              cursorCharacter='▮'
+              text={['Austin Baird']}
+              deletingSpeed={50}
+              cursorBlinkDuration={0.5}
+            />
+          </Typography>
 
-					<Typography
-						variant="h2"
-						sx={{
-							marginBottom: "1.5rem",
-							fontSize: { xs: "1.25rem", md: "2rem" }
-						}}
-					>
-						Full Stack Software Engineer
-					</Typography>
-					<Typography
-						sx={{
-							maxWidth: "500px",
-							marginBottom: "3rem",
-							fontSize: { xs: "0.8rem", md: "1.125rem" }
-						}}
-					>
-						I build exceptional software that is performant, accessible, and
-						designed with best practices in mind.
-					</Typography>
-					<Box
-						sx={{
-							display: "flex",
-							gap: "1rem",
-							flexWrap: "wrap",
-							"@media (max-width: 768px)": {
-								justifyContent: "center"
-							}
-						}}
-					>
-						<Button href="#projects" variant="contained" color="primary">
-							My Work
-						</Button>
-						<Button href="#contact" variant="outlined" color="primary">
-							Contact
-						</Button>
-					</Box>
-				</Box>
-				<Box
-					sx={{
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-						position: "relative",
-						"@media (max-width: 768px)": {
-							justifyContent: "center"
-						}
-					}}
-				>
-					<Box
-						component="img"
-						src={"/me.png"}
-						alt="Austin Baird"
-						sx={{
-							width: { xs: "250px", md: "350px" },
-							height: { xs: "250px", md: "350px" },
-							borderRadius: "50%",
-							boxShadow: 3,
-							zIndex: 1,
-							objectFit: "cover"
-						}}
-					/>
-
-					<Box
-						sx={{
-							backgroundImage:
-								"linear-gradient(to bottom right, #004b23, #8aff14)",
-							position: "absolute",
-							width: { xs: "265px", md: "365px" },
-							height: { xs: "265px", md: "365px" },
-							top: "50%",
-							left: "50%",
-							borderRadius: "50%",
-							animation: `${rotate} 10s linear infinite`,
-							transformOrigin: "top left"
-						}}
-					/>
-				</Box>
-			</Box>
-		</Box>
-	);
+          <Typography
+            variant='h2'
+            sx={{
+              marginBottom: '1.5rem',
+              fontSize: { xs: '1.25rem', md: '2rem' },
+            }}
+          >
+            Full Stack Software Engineer
+          </Typography>
+          <Typography
+            sx={{
+              maxWidth: '500px',
+              marginBottom: '3rem',
+              fontSize: { xs: '0.8rem', md: '1.125rem' },
+            }}
+          >
+            I build exceptional software that is performant, accessible, and
+            designed with best practices in mind.
+          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: '1rem',
+              flexWrap: 'wrap',
+              '@media (max-width: 768px)': {
+                justifyContent: 'center',
+              },
+            }}
+          >
+            <Button href='#projects' variant='contained' color='primary'>
+              My Work
+            </Button>
+            <Button href='#contact' variant='outlined' color='primary'>
+              Contact
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative',
+            '@media (max-width: 768px)': {
+              justifyContent: 'center',
+            },
+          }}
+        >
+          <Profile_Card />
+        </Box>
+      </Box>
+    </Box>
+  );
 }
 
 export default Hero;
