@@ -3,6 +3,7 @@ import { keyframes } from '@mui/system';
 import TextType from './TextType';
 import Grainient from './Gradient';
 import Profile_Card from './Profile_Card';
+import { Download } from '@mui/icons-material';
 
 const rotate = keyframes`
 	from {
@@ -26,6 +27,7 @@ function Hero() {
       }}
     >
       <div
+        aria-hidden='true'
         style={{
           position: 'absolute',
           top: 0,
@@ -143,7 +145,17 @@ function Hero() {
               },
             }}
           >
-            <Button href='#projects' variant='contained' color='primary'>
+            <Button
+              component='a'
+              href='/Austin_Baird_Resume_2026.pdf'
+              download='Austin_Baird_Resume_2026.pdf'
+              startIcon={<Download />}
+              variant='contained'
+              color='primary'
+            >
+              Resume
+            </Button>
+            <Button href='#projects' variant='outlined' color='primary'>
               My Work
             </Button>
             <Button href='#contact' variant='outlined' color='primary'>

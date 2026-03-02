@@ -32,7 +32,7 @@ function App() {
           <Route
             path='/'
             element={
-              <Box component='main' sx={{ flex: 1 }}>
+              <Box component='main' id='main-content' sx={{ flex: 1 }}>
                 <Hero />
                 <About />
                 <Experience />
@@ -44,7 +44,7 @@ function App() {
             }
           />
           <Route path='/blog'>
-            <Route path=':post_id' element={<Blog_Post_Page />} />
+            <Route path=':slug' element={<Blog_Post_Page />} />
             <Route index element={<Blog_Home />} />
           </Route>
           <Route path='*' element={<div>Page Not Found</div>} />

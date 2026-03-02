@@ -4,6 +4,8 @@ import LightRays from './Light_Rays';
 export default function Profile_Card() {
   return (
     <Box
+      role='img'
+      aria-label='Portrait photo of Austin Baird'
       sx={{
         height: { xs: '360px', md: '55vh' },
         width: { xs: '280px', md: '31vh' },

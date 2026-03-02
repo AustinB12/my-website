@@ -33,6 +33,7 @@ const LightDarkToggle = () => {
   return (
     <IconButton
       onClick={() => setMode(mode !== 'dark' ? 'dark' : 'light')}
+      aria-label={`Switch to ${mode === 'dark' ? 'light' : 'dark'} mode`}
       title='Toggle the light/dark mode'
       sx={{
         overflow: 'clip',
@@ -52,6 +53,7 @@ function Header() {
   return (
     <Box
       component='header'
+      role='banner'
       sx={{
         position: 'fixed',
         top: 0,
