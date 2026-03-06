@@ -1,14 +1,5 @@
 import { lazy, type ComponentType } from 'react';
-
-export interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  description: string;
-  tags: string[];
-  component: React.LazyExoticComponent<ComponentType>;
-  wordCount: number;
-}
+import type { Blog_Post } from '../types';
 
 /**
  * Central registry of all blog posts.
@@ -17,7 +8,7 @@ export interface BlogPost {
  *
  * `wordCount` is an approximate count used to calculate reading time.
  */
-const posts: BlogPost[] = [
+const posts: Blog_Post[] = [
   {
     slug: 'js-strings',
     title: 'Strings in JavaScript',
@@ -38,7 +29,28 @@ const posts: BlogPost[] = [
     component: lazy(() => import('./js-booleans')),
     wordCount: 850,
   },
+  {
+    slug: 'js-arrays',
+    title: 'Arrays in JavaScript',
+    date: '2026-03-06',
+    description:
+      "A beginner-friendly deep dive into JavaScript's array data type — creating, accessing, and manipulating arrays.",
+    tags: ['JavaScript', 'Programming', 'Basics'],
+    component: lazy(() => import('./js-arrays')),
+    wordCount: 500,
+  },
 ];
+
+// {
+//   slug: '',
+//   title: '',
+//   date: '',
+//   description:
+//     "",
+//   tags: [''],
+//   component: lazy(() => import('./')),
+//   wordCount: 500,
+// },
 
 export default posts;
 
@@ -74,7 +86,7 @@ export function getAllTags(): string[] {
 /**
  * Find a post by slug, or undefined if not found.
  */
-export function getPostBySlug(slug: string): BlogPost | undefined {
+export function getPostBySlug(slug: string): Blog_Post | undefined {
   return posts.find((post) => post.slug === slug);
 }
 
@@ -82,8 +94,8 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
  * Get neighboring posts for navigation (previous and next).
  */
 export function getAdjacentPosts(slug: string): {
-  prev: BlogPost | undefined;
-  next: BlogPost | undefined;
+  prev: Blog_Post | undefined;
+  next: Blog_Post | undefined;
 } {
   const index = posts.findIndex((post) => post.slug === slug);
   return {

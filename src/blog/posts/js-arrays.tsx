@@ -11,35 +11,39 @@ const JS_CHIPS = [
   { label: 'Basics' },
 ];
 
-export default function JS_Booleans_Post() {
+export default function JS_Arrays_Post() {
   const outlineItems = [
     {
-      title: 'Boolean Values',
-      icon: '🔘',
-      description: 'Understanding true and false',
-      href: '#boolean-values',
+      title: 'Array Basics',
+      icon: '☄️',
+      description: 'Understanding arrays and their usage',
+      href: '#array-basics',
     },
   ];
 
   return (
     <BlogPostContainer>
       <BlogPostHeader
-        title='Booleans 🧵'
+        title='Arrays 🧵'
         chips={JS_CHIPS}
         intro={
           <>
-            Booleans are fundamental data types. They are the "on / off" and
-            "yes / no" of programming. In JavaScript, the boolean values are
-            simply <code>true</code> and <code>false</code>. Let's take a closer
-            look at how they work.
+            Arrays are fundamental data structures. They allow you to store
+            multiple values in a single variable and provide various methods to
+            manipulate these values. In JavaScript, arrays are flexible and can
+            hold elements of any type. Let's take a closer look at how they
+            work.
           </>
         }
       />
 
       <ContentOutline items={outlineItems} />
 
-      {/* Section 1 — The bools */}
-      <BlogSection id='booleans' header='1. Boolean Basics'>
+      {/* Section 1 — The arrays */}
+      <BlogSection id='array-basics' header='1. Array Basics'></BlogSection>
+
+      {/* Section 2 — The arrays */}
+      <BlogSection id='arrays' header='2. Array Methods'>
         <CodeBlock
           code={`const single = 'Hello, world!';
 const double = "Hello, world!";
