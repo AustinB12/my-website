@@ -1,22 +1,22 @@
-import { useEffect, useRef } from "react";
-import { Renderer, Program, Mesh, Triangle } from "ogl";
+import { Mesh, Program, Renderer, Triangle } from 'ogl'
+import { useEffect, useRef } from 'react'
 
 const hexToRgb = (hex: string) => {
-	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	if (!result) return [1, 1, 1];
+	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+	if (!result) return [1, 1, 1]
 	return [
-		parseInt(result[1] || "0", 16) / 255,
-		parseInt(result[2] || "0", 16) / 255,
-		parseInt(result[3] || "0", 16) / 255
-	];
-};
+		parseInt(result[1] || '0', 16) / 255,
+		parseInt(result[2] || '0', 16) / 255,
+		parseInt(result[3] || '0', 16) / 255,
+	]
+}
 
 const vertex = `#version 300 es
 in vec2 position;
 void main() {
   gl_Position = vec4(position, 0.0, 1.0);
 }
-`;
+`
 
 const fragment = `#version 300 es
 precision highp float;
@@ -100,7 +100,7 @@ void main(){
   mainImage(o,gl_FragCoord.xy);
   fragColor=o;
 }
-`;
+`
 
 const Grainient = ({
 	timeSpeed = 0.25,
@@ -122,32 +122,32 @@ const Grainient = ({
 	centerX = 0.0,
 	centerY = 0.0,
 	zoom = 0.9,
-	color1 = "#FF9FFC",
-	color2 = "#5227FF",
-	color3 = "#B19EEF"
+	color1 = '#FF9FFC',
+	color2 = '#5227FF',
+	color3 = '#B19EEF',
 }) => {
-	const containerRef = useRef(null);
+	const containerRef = useRef(null)
 
 	useEffect(() => {
-		if (!containerRef.current) return;
+		if (!containerRef.current) return
 
 		const renderer = new Renderer({
 			webgl: 2,
 			alpha: true,
 			antialias: false,
-			dpr: Math.min(window.devicePixelRatio || 1, 2)
-		});
+			dpr: Math.min(window.devicePixelRatio || 1, 2),
+		})
 
-		const gl = renderer.gl;
-		const canvas = gl.canvas;
-		canvas.style.width = "100%";
-		canvas.style.height = "100%";
-		canvas.style.display = "block";
+		const gl = renderer.gl
+		const canvas = gl.canvas
+		canvas.style.width = '100%'
+		canvas.style.height = '100%'
+		canvas.style.display = 'block'
 
-		const container = containerRef.current;
-		container.appendChild(canvas);
+		const container = containerRef.current
+		container.appendChild(canvas)
 
-		const geometry = new Triangle(gl);
+		const geometry = new Triangle(gl)
 		const program = new Program(gl, {
 			vertex,
 			fragment,
@@ -174,44 +174,44 @@ const Grainient = ({
 				uZoom: { value: zoom },
 				uColor1: { value: new Float32Array(hexToRgb(color1)) },
 				uColor2: { value: new Float32Array(hexToRgb(color2)) },
-				uColor3: { value: new Float32Array(hexToRgb(color3)) }
-			}
-		});
+				uColor3: { value: new Float32Array(hexToRgb(color3)) },
+			},
+		})
 
-		const mesh = new Mesh(gl, { geometry, program });
+		const mesh = new Mesh(gl, { geometry, program })
 
 		const setSize = () => {
-			const rect = container.getBoundingClientRect();
-			const width = Math.max(1, Math.floor(rect.width));
-			const height = Math.max(1, Math.floor(rect.height));
-			renderer.setSize(width, height);
-			const res = program.uniforms.iResolution.value;
-			res[0] = gl.drawingBufferWidth;
-			res[1] = gl.drawingBufferHeight;
-		};
+			const rect = container.getBoundingClientRect()
+			const width = Math.max(1, Math.floor(rect.width))
+			const height = Math.max(1, Math.floor(rect.height))
+			renderer.setSize(width, height)
+			const res = program.uniforms.iResolution.value
+			res[0] = gl.drawingBufferWidth
+			res[1] = gl.drawingBufferHeight
+		}
 
-		const ro = new ResizeObserver(setSize);
-		ro.observe(container);
-		setSize();
+		const ro = new ResizeObserver(setSize)
+		ro.observe(container)
+		setSize()
 
-		let raf = 0;
-		const t0 = performance.now();
+		let raf = 0
+		const t0 = performance.now()
 		const loop = (t) => {
-			program.uniforms.iTime.value = (t - t0) * 0.001;
-			renderer.render({ scene: mesh });
-			raf = requestAnimationFrame(loop);
-		};
-		raf = requestAnimationFrame(loop);
+			program.uniforms.iTime.value = (t - t0) * 0.001
+			renderer.render({ scene: mesh })
+			raf = requestAnimationFrame(loop)
+		}
+		raf = requestAnimationFrame(loop)
 
 		return () => {
-			cancelAnimationFrame(raf);
-			ro.disconnect();
+			cancelAnimationFrame(raf)
+			ro.disconnect()
 			try {
-				container.removeChild(canvas);
+				container.removeChild(canvas)
 			} catch {
 				// Ignore
 			}
-		};
+		}
 	}, [
 		timeSpeed,
 		colorBalance,
@@ -234,20 +234,20 @@ const Grainient = ({
 		zoom,
 		color1,
 		color2,
-		color3
-	]);
+		color3,
+	])
 
 	return (
 		<div
 			ref={containerRef}
 			style={{
-				position: "relative",
-				width: "100%",
-				height: "100%",
-				overflow: "hidden"
+				position: 'relative',
+				width: '100%',
+				height: '100%',
+				overflow: 'hidden',
 			}}
 		/>
-	);
-};
+	)
+}
 
-export default Grainient;
+export default Grainient
