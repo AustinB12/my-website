@@ -1,0 +1,29 @@
+import CodeBlock from '../../components/CodeBlock'
+import BlogPostContainer from '../components/BlogPostContainer'
+import BlogPostHeader from '../components/BlogPostHeader'
+import BlogSection from '../components/BlogSection'
+import ContentOutline from '../components/ContentOutline'
+
+const chips = [{ label: 'Programming' }]
+
+export default function Abc_Post() {
+	const outlineItems = [
+		{
+			title: 'TODO',
+			icon: '📦',
+			href: '#TODO',
+		},
+	]
+
+	return (
+		<BlogPostContainer>
+			<BlogPostHeader title="TODO" chips={chips} intro={<>TODO</>} />
+
+			<ContentOutline items={outlineItems} />
+
+			<BlogSection id="TODO" header="TODO">
+				<CodeBlock language="csharp" code={``} filename="" />
+			</BlogSection>
+		</BlogPostContainer>
+	)
+}
